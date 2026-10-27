@@ -3,8 +3,8 @@
 :root {
   --bg: #fafaf8;
   --ink: #171717;
-  --ink-2: #5c5c5c;
-  --muted: #767676;
+  --ink-2: #4a4a4a;
+  --muted: #6b6b6b;
   --line: #e7e7e3;
   --surface: #ffffff;
   --accent: #5367e8;
@@ -21,6 +21,7 @@
   --color-accent: var(--accent);
   --font-sans: var(--font-geist-sans), system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-instrument), Georgia, serif;
 }
 
 html {
@@ -65,10 +66,10 @@ body {
 
 .label {
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: var(--muted);
+  color: var(--ink-2);
 }
 
 .tag {
@@ -152,3 +153,6 @@ body {
   [data-reveal="pending"] { opacity: 1; transform: none; }
   * { transition-duration: 0.01ms !important; }
 }
+
+/* Alternate section backgrounds so each section reads as its own block. */
+main > section:nth-of-type(even) { background: var(--surface); }

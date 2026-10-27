@@ -8,8 +8,8 @@ export function Hobbies() {
     <section id="life" className="section" aria-labelledby="life-h">
       <div className="wrap">
         <Reveal>
-          <SectionHeading index="07 / Off the clock" title="Beyond the keyboard" id="life-h">
-            Cricket, badminton, and a song for every mood.
+          <SectionHeading index="07 · Outside work" title="What I do off the clock" id="life-h">
+            Cricket, badminton, and music for every mood.
           </SectionHeading>
         </Reveal>
 
@@ -33,7 +33,7 @@ export function Hobbies() {
             <p className="label">Fun facts</p>
             <ul className="mt-4 border-t border-ink">
               {funFacts.map((f) => (
-                <li key={f} className="border-b border-line py-4 text-[15px] leading-relaxed text-ink2">
+                <li key={f} className="border-b border-line py-4 text-base leading-relaxed text-ink2">
                   {f}
                 </li>
               ))}

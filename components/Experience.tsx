@@ -7,7 +7,9 @@ export function Experience() {
     <section id="experience" className="section" aria-labelledby="exp-h">
       <div className="wrap">
         <Reveal>
-          <SectionHeading index="03 / Experience" title="Built in production" id="exp-h" />
+          <SectionHeading index="03 · Experience" title="Where I've worked" id="exp-h">
+            My current internship and my previous role, with what I worked on in each.
+          </SectionHeading>
         </Reveal>
         <ol className="border-t border-ink">
           {experience.map((r) => (
@@ -21,7 +23,7 @@ export function Experience() {
                   <h3 className="text-xl font-semibold tracking-tight sm:text-2xl">{r.role}</h3>
                   <p className="mt-1 text-ink2">{r.company}</p>
                   {r.summary && <p className="mt-5 max-w-[60ch] leading-relaxed text-ink2">{r.summary}</p>}
-                  <ul className="mt-6 max-w-[68ch] space-y-3 text-[15px] leading-relaxed text-ink2">
+                  <ul className="mt-6 max-w-[68ch] space-y-3 text-base leading-relaxed text-ink2">
                     {r.points.map((p) => (
                       <li key={p} className="grid grid-cols-[16px_1fr]">
                         <span aria-hidden className="mt-[0.7em] h-px w-2 bg-muted" />

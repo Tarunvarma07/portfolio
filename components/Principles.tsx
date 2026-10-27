@@ -7,7 +7,9 @@ export function Principles() {
     <section id="principles" className="section" aria-labelledby="pr-h">
       <div className="wrap">
         <Reveal>
-          <SectionHeading index="05 / Approach" title="Beyond making it work" id="pr-h" />
+          <SectionHeading index="05 · How I work" title="How I approach engineering" id="pr-h">
+            Three habits that guide how I build and review software.
+          </SectionHeading>
         </Reveal>
         <ol className="grid gap-10 md:grid-cols-3 md:gap-8">
           {principles.map((p, i) => (

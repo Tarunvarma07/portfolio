@@ -5,8 +5,10 @@ export type Link = { label: string; href: string };
 export const person = {
   name: "Venkata Sai Tarun Varma Chintha",
   short: "Tarun",
+  initials: "TC",
+  cardTagline: "Backend, applied AI, and things that ship.",
   wordmark: "TARUN / ENGINEERING",
-  role: "Software Engineer",
+  role: "Software Developer Intern",
   focus: "Backend & Applied AI",
   location: "Andhra Pradesh, India",
   email: "tarunvarmachintha@gmail.com",
@@ -22,8 +24,9 @@ export const person = {
 } as const;
 
 export const nav: Link[] = [
-  { label: "Work", href: "#work" },
+  { label: "Projects", href: "#work" },
   { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#tools" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];
@@ -143,7 +146,7 @@ export type Role = {
 export const experience: Role[] = [
   {
     company: "Knight21 Digi Hub Private Limited",
-    role: "Software Engineer",
+    role: "Software Developer Intern",
     dates: "July 2026 – Present",
     location: "Kakinada, India",
     summary:

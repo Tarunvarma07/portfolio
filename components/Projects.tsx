@@ -33,7 +33,7 @@ function Stack({ items }: { items: string[] }) {
 
 function Points({ items }: { items: string[] }) {
   return (
-    <ul className="space-y-3 text-[15px] leading-relaxed text-ink2">
+    <ul className="space-y-3 text-base leading-relaxed text-ink2">
       {items.map((h) => (
         <li key={h} className="grid grid-cols-[16px_1fr]">
           <span aria-hidden className="mt-[0.7em] h-px w-2 bg-muted" />
@@ -109,8 +109,8 @@ export function Projects() {
     <section id="work" className="section" aria-labelledby="work-h">
       <div className="wrap">
         <Reveal>
-          <SectionHeading index="02 / Work" title="Selected work" id="work-h">
-            Projects built to solve practical problems, explore applied AI, and develop reliable software systems.
+          <SectionHeading index="02 · Projects" title="Projects I've built" id="work-h">
+            Three projects that show how I work: applied AI, backend APIs, and machine learning. Each one lists what it does, how it&apos;s built, and what I did.
           </SectionHeading>
         </Reveal>
         <div className="space-y-6">

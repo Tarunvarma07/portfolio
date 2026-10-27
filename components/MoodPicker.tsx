@@ -35,7 +35,7 @@ export function MoodPicker() {
         </div>
         <div>
           <p className="text-xl font-semibold tracking-tight">{mood.label}</p>
-          <p className="mt-1 max-w-[40ch] text-[15px] leading-relaxed text-ink2">{mood.line}</p>
+          <p className="mt-1 max-w-[40ch] text-base leading-relaxed text-ink2">{mood.line}</p>
         </div>
       </div>
     </div>

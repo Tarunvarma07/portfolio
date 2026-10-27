@@ -8,7 +8,11 @@ const MAX = (70 * Math.PI) / 180;
 
 // A portrait hung from a pin by one thread. Drag it and let go: it swings
 // as a damped pendulum. Arrow keys give it a push.
-export function HangingPortrait() {
+export function HangingPortrait({
+  className = "relative mx-auto w-[min(280px,78vw)] lg:ml-auto lg:mr-0 xl:mr-6",
+}: {
+  className?: string;
+}) {
   const root = useRef<HTMLDivElement>(null);
   const swing = useRef<HTMLDivElement>(null);
   const s = useRef({ a: 0.06, v: 0, dragging: false, raf: 0, last: 0 });
@@ -87,37 +91,39 @@ export function HangingPortrait() {
   };
 
   return (
-    <div ref={root} className="relative mx-auto w-[min(280px,78vw)] lg:ml-auto lg:mr-0 xl:mr-6">
+    <div ref={root} className={className}>
       <span aria-hidden className="absolute left-1/2 top-0 z-10 h-2.5 w-2.5 -translate-x-1/2 rounded-full bg-ink" />
       <div ref={swing} style={{ transformOrigin: "50% 0", transform: "rotate(0.06rad)" }}>
         <div aria-hidden className="mx-auto h-[72px] w-px bg-ink" />
         <figure
           tabIndex={0}
-          aria-label="Portrait hanging from a thread. Drag to swing it, or use the left and right arrow keys."
+          aria-label="Name card hanging from a thread. Drag to swing it, or use the left and right arrow keys."
           onPointerDown={onDown}
           onPointerMove={onMove}
           onPointerUp={onUp}
           onPointerCancel={onUp}
           onKeyDown={onKey}
-          className="relative cursor-grab touch-pan-y select-none border border-line bg-surface p-3 shadow-[0_18px_32px_-18px_rgba(23,23,23,0.35)] active:cursor-grabbing"
+          className="relative flex min-h-[400px] cursor-grab touch-pan-y select-none flex-col justify-between rounded-[22px] bg-[#121212] p-5 text-white shadow-[0_24px_40px_-20px_rgba(23,23,23,0.6)] active:cursor-grabbing"
         >
-          <span aria-hidden className="absolute left-1/2 top-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full border border-ink bg-bg" />
-          <div className="art relative aspect-[2/3] overflow-hidden bg-line">
+          <span aria-hidden className="absolute left-1/2 top-0 h-3 w-8 -translate-x-1/2 -translate-y-1/2 rounded-[3px] bg-ink" />
+          <span className="absolute right-5 top-6 whitespace-nowrap font-mono text-[10px] uppercase tracking-[0.08em] text-white/40">Drag me</span>
+          <div>
+            <p className="text-5xl font-black tracking-tight">{person.initials}</p>
+            <p className="mt-4 max-w-[16ch] font-serif text-lg italic leading-snug text-white/70">{person.cardTagline}</p>
+          </div>
+          <div className="flex items-end">
             <Image
               src="/portrait.webp"
               alt={`Portrait of ${person.short}`}
-              width={1024}
-              height={1536}
-              sizes="(min-width: 1024px) 280px, 78vw"
+              width={256}
+              height={384}
+              sizes="150px"
               priority
               draggable={false}
-              className="pointer-events-none h-full w-full object-cover"
+              className="pointer-events-none h-[150px] w-[150px] rounded-full border-4 border-white/20 object-cover object-top"
             />
+            
           </div>
-          <figcaption className="mt-3 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.08em] text-muted">
-            <span>{person.short}</span>
-            <span>Drag to swing</span>
-          </figcaption>
         </figure>
       </div>
     </div>
