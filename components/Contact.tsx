@@ -14,7 +14,7 @@ export function Contact() {
       <div className="wrap">
         <Reveal className="grid gap-12 md:grid-cols-12 md:gap-8">
           <div className="md:col-span-7">
-            <p className="label">07 / Contact</p>
+            <p className="label">08 / Contact</p>
             <h2 id="contact-h" className="mt-6 text-[clamp(2rem,5vw,3.75rem)] font-semibold leading-[1.05] tracking-[-0.03em] text-balance">
               Have an interesting problem to solve?
             </h2>

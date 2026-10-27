@@ -222,3 +222,34 @@ export const about = {
     "Technical mentor to 250+ junior students through programming workshops and hackathons.",
   ],
 };
+
+// Off-the-clock content. Edit freely; keep fun facts true.
+export const hobbies = [
+  {
+    title: "Cricket",
+    body: "Team sport, long games. It taught me to stay patient, read the situation, and trust the people around me.",
+  },
+  {
+    title: "Badminton",
+    body: "Fast, quiet, and all about footwork and timing. My favourite way to reset after a long debugging session.",
+  },
+  {
+    title: "Music, by mood",
+    body: "I pick songs to match how I feel, and the mood usually decides how the work goes. Try the picker.",
+  },
+];
+
+// speed = equalizer cycle in seconds (lower is faster).
+export const moods = [
+  { id: "focus", label: "Focus", line: "Steady, low-distraction songs for deep work and long debugging.", speed: 1.6 },
+  { id: "happy", label: "Happy", line: "Upbeat songs for shipping days and small wins.", speed: 0.7 },
+  { id: "calm", label: "Calm", line: "Slow, easy songs for winding down and reading.", speed: 2.4 },
+  { id: "hype", label: "Hype", line: "High-energy songs for match days and deadlines.", speed: 0.45 },
+  { id: "late", label: "Late night", line: "Mellow songs for quiet hours and unfinished ideas.", speed: 2 },
+];
+
+export const funFacts = [
+  "I won a regional hackathon competing against 30+ teams.",
+  "I've mentored 250+ junior students through programming workshops and hackathons.",
+  "One of the apps I shipped books rooms and tickets for temples (HostHaven).",
+];

@@ -1,4 +1,5 @@
 import { person } from "@/lib/site";
+import { HangingPortrait } from "./HangingPortrait";
 
 const focus = [
   ["01", "Backend & APIs", "Python, FastAPI, Django, PostgreSQL"],
@@ -15,7 +16,7 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 opacity-60 [background-image:linear-gradient(var(--line)_1px,transparent_1px),linear-gradient(90deg,var(--line)_1px,transparent_1px)] [background-size:64px_64px] [mask-image:linear-gradient(to_bottom,black,transparent_85%)]"
       />
-      <div className="wrap relative grid gap-16 lg:grid-cols-12 lg:items-end">
+      <div className="wrap relative grid gap-16 lg:grid-cols-12 lg:items-center">
         <div className="lg:col-span-8">
           <p className="label rise" style={d(0)}>
             Software Engineer · Backend &amp; Applied AI
@@ -50,22 +51,20 @@ export function Hero() {
               </>
             )}
           </p>
-        </div>
-
-        <aside className="rise lg:col-span-4" style={d(5)} aria-label="Areas of focus">
-          <p className="label mb-4">Focus</p>
-          <ol className="border-t border-ink">
+          <ol className="rise mt-14 grid gap-x-6 border-t border-ink sm:grid-cols-3" style={d(6)} aria-label="Areas of focus">
             {focus.map(([n, t, s]) => (
-              <li key={n} className="grid grid-cols-[32px_1fr] gap-x-2 border-b border-line py-4">
-                <span className="font-mono text-xs leading-6 text-muted">{n}</span>
-                <div>
-                  <p className="font-medium">{t}</p>
-                  <p className="mt-1 font-mono text-xs leading-5 text-muted">{s}</p>
-                </div>
+              <li key={n} className="border-b border-line py-4 sm:border-b-0">
+                <span className="font-mono text-xs text-muted">{n}</span>
+                <p className="mt-2 font-medium">{t}</p>
+                <p className="mt-1 font-mono text-xs leading-5 text-muted">{s}</p>
               </li>
             ))}
           </ol>
-        </aside>
+        </div>
+
+        <div className="rise lg:col-span-4" style={d(2)}>
+          <HangingPortrait />
+        </div>
       </div>
     </section>
   );

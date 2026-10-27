@@ -123,7 +123,29 @@ body {
 [data-reveal] { transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
 [data-reveal="shown"] { opacity: 1; transform: none; }
 
+/* Artwork treatment: monochrome print with a faint accent wash and halftone. */
+.art img { filter: grayscale(1) contrast(1.15) brightness(1.04); }
+.art::before, .art::after { content: ""; position: absolute; inset: 0; pointer-events: none; }
+.art::before { background: var(--accent); mix-blend-mode: soft-light; opacity: 0.55; }
+.art::after {
+  background-image: radial-gradient(rgba(23,23,23,0.35) 0.8px, transparent 1px);
+  background-size: 4px 4px;
+  mix-blend-mode: multiply;
+  opacity: 0.35;
+}
+
+@keyframes eq {
+  0%, 100% { transform: scaleY(0.25); }
+  50% { transform: scaleY(1); }
+}
+.eq span { transform-origin: bottom; animation: eq var(--eq-speed, 1.2s) ease-in-out infinite; }
+.eq span:nth-child(2) { animation-delay: -0.3s; }
+.eq span:nth-child(3) { animation-delay: -0.7s; }
+.eq span:nth-child(4) { animation-delay: -0.15s; }
+.eq span:nth-child(5) { animation-delay: -0.5s; }
+
 @media (prefers-reduced-motion: reduce) {
+  .eq span { animation: none; transform: scaleY(0.6); }
   html { scroll-behavior: auto; }
   .rise { animation: none; }
   [data-reveal] { transition: none; }
